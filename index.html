@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 네비게이션 바 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">소개</a></li>
+                <li><a href="#about" class="nav-link">스킬</a></li>
+                <li><a href="#skills" class="nav-link">프로젝트</a></li>
+                <li><a href="#contact" class="nav-link">연락처</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero 섹션 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">안녕하세요, <span class="highlight">[김민훈]</span>입니다.</h1>
+            <p class="hero-subtitle fade-in-delay">아이디어를 현실로 만드는 사람</p>
+        </div>
+    </section>
+
+    <!-- About 섹션 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <div class="profile-image-wrapper">
+                    <img src="https://i.imgur.com/QsMmwOW.png" alt="Profile" class="profile-image">
+                </div>
+                <div class="about-text">
+                    <p>
+                        안녕하세요! 열정적인 웹 개발자입니다. 
+                        사용자 경험을 중시하며, 깔끔하고 직관적인 인터페이스를 만드는 것을 좋아합니다.
+                        항상 새로운 기술을 배우고 성장하는 것을 즐깁니다.
+                    </p>
+                    <p>
+                        창의적인 아이디어를 현실로 구현하는 것에 관심이 많으며,
+                        협업을 통한 지속적인 성장을 추구합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills 섹션 -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon">💻</div>
+                    <h3>Frontend</h3>
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Design</h3>
+                    <p>UI/UX Design</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">⚡</div>
+                    <h3>Tools</h3>
+                    <p>Git, VS Code</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects 섹션 -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <div class="project-image">📱</div>
+                    <h3>프로젝트 1</h3>
+                    <p>설명이 들어갈 영역입니다.</p>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">🌐</div>
+                    <h3>프로젝트 2</h3>
+                    <p>설명이 들어갈 영역입니다.</p>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">🚀</div>
+                    <h3>프로젝트 3</h3>
+                    <p>설명이 들어갈 영역입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact 섹션 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <p class="contact-text">함께 일하고 싶으신가요? 연락주세요!</p>
+            <button class="email-btn" id="emailBtn">
+                <span>이메일 복사</span>
+            </button>
+            <div class="email-display" id="emailDisplay">minhun0718@gmail.com</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
