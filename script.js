@@ -38,24 +38,42 @@ window.addEventListener('scroll', () => {
 // 이메일 복사 기능
 const emailBtn = document.getElementById('emailBtn');
 const emailDisplay = document.getElementById('emailDisplay');
-const email = 'minhun0718@gmail.com'; // 여기에 실제 이메일 주소를 입력하세요
+const email = 'atozhj18w@naver.com';
 
 emailBtn.addEventListener('click', () => {
-    // 클립보드에 이메일 복사
     navigator.clipboard.writeText(email).then(() => {
-        // 버튼 텍스트 임시 변경
-        const originalText = emailBtn.querySelector('span').textContent;
-        emailBtn.querySelector('span').textContent = '복사 완료!';
+        const originalText = emailBtn.textContent;
+        emailBtn.textContent = '복사 완료!';
         emailBtn.style.borderColor = '#e8c547';
         
-        // 2초 후 원래 텍스트로 복원
         setTimeout(() => {
-            emailBtn.querySelector('span').textContent = originalText;
+            emailBtn.textContent = originalText;
             emailBtn.style.borderColor = '#d4af37';
         }, 2000);
     }).catch(err => {
         console.error('이메일 복사 실패:', err);
         alert('이메일 복사에 실패했습니다. 수동으로 복사해주세요: ' + email);
+    });
+});
+
+// 전화번호 복사 기능
+const phoneBtn = document.getElementById('phoneBtn');
+const phoneDisplay = document.getElementById('phoneDisplay');
+const phone = '010-2510-1180';
+
+phoneBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(phone).then(() => {
+        const originalText = phoneBtn.textContent;
+        phoneBtn.textContent = '복사 완료!';
+        phoneBtn.style.borderColor = '#e8c547';
+        
+        setTimeout(() => {
+            phoneBtn.textContent = originalText;
+            phoneBtn.style.borderColor = '#d4af37';
+        }, 2000);
+    }).catch(err => {
+        console.error('전화번호 복사 실패:', err);
+        alert('전화번호 복사에 실패했습니다. 수동으로 복사해주세요: ' + phone);
     });
 });
 
@@ -92,13 +110,32 @@ const observer = new IntersectionObserver((entries) => {
 
 // 관찰할 요소들
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.skill-item, .project-item, .about-content');
+    const animatedElements = document.querySelectorAll('.skill-item, .about-content, .info-section');
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
+    });
+    
+    // 스킬바 애니메이션
+    const skillBars = document.querySelectorAll('.skill-fill');
+    const barObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.width = entry.target.style.width;
+            }
+        });
+    }, observerOptions);
+    
+    skillBars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0%';
+        barObserver.observe(bar);
+        setTimeout(() => {
+            bar.style.width = width;
+        }, 100);
     });
 });
 
